@@ -45,18 +45,24 @@
       viewer.value.dataSources.add(dataSource);
       qingDaoDataSource.value = dataSource
     });
-    // 定位到 数据位置
-    viewer.value.camera.flyTo({
-      destination : Cesium.Cartesian3.fromDegrees(120.34310099384454, 35.8083920730558326, 80000.0),
-      orientation : {
-        heading : Cesium.Math.toRadians(0.0),
-        pitch : Cesium.Math.toRadians(-60.0),
-        roll : 0.0
-      }
-    });
+    
     setTimeout(() => {
-      setupFlickerMaterial()
+      setupSpriteline1Material()
     }, 1000)
+    setTimeout(() => {
+      // 定位到 数据位置
+      viewer.value.camera.flyTo({
+        destination : Cesium.Cartesian3.fromDegrees(120.34310099384454, 35.8083920730558326, 80000.0),
+        orientation : {
+          heading : Cesium.Math.toRadians(0.0),
+          pitch : Cesium.Math.toRadians(-60.0),
+          roll : 0.0
+        }
+      });
+    }, 11000)
+    // setTimeout(() => {
+    //   setupFlickerMaterial()
+    // }, 1000)
     // setTimeout(() => {
     //   setupGradientHilightMaterial()
     // }, 10000)

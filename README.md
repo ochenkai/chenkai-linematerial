@@ -1,4 +1,7 @@
 # GIS CESIUM 动态线条材质 闪烁，图片，高亮
+## 动态效果材质
+![动态效果材质](README_files/WeChat_20230915130946.gif)
+![动态效果材质](README_files/WeChat_20230915130946.mp4)
 ### 引入依赖
 ```javascript
 import * as Cesium from 'cesium'
