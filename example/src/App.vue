@@ -1,7 +1,7 @@
 <script setup>
   import { ref, onMounted } from 'vue'
   import * as Cesium from 'cesium' // 引入cesium
-  import { LineFlickerMaterial, Spriteline1Material, GradientHilightMaterial } from "./utils/lineMaterial.js"
+  import { LineFlickerMaterial, Spriteline1Material, GradientHilightMaterial } from "chenkai-linematerial"
 
   const viewer = ref(null)
   // 虚拟数据dataSource展示实体，添加材质显示
@@ -44,8 +44,25 @@
     Cesium.GeoJsonDataSource.load("/qingdaoRoad.geojson").then(function(dataSource) {
       viewer.value.dataSources.add(dataSource);
       qingDaoDataSource.value = dataSource
-      setupGradientHilightMaterial()
     });
+    // 定位到 数据位置
+    viewer.value.camera.flyTo({
+      destination : Cesium.Cartesian3.fromDegrees(120.34310099384454, 35.8083920730558326, 80000.0),
+      orientation : {
+        heading : Cesium.Math.toRadians(0.0),
+        pitch : Cesium.Math.toRadians(-60.0),
+        roll : 0.0
+      }
+    });
+    setTimeout(() => {
+      setupFlickerMaterial()
+    }, 1000)
+    // setTimeout(() => {
+    //   setupGradientHilightMaterial()
+    // }, 10000)
+    // setTimeout(() => {
+    //   setupSpriteline1Material()
+    // }, 30000)
   }
   
   // 闪烁线条
@@ -66,7 +83,7 @@
   const setupSpriteline1Material = () => {
     const entities = qingDaoDataSource.value.entities.values;
     entities.forEach(entity => {
-      entity.polyline.width = 1.5;
+      entity.polyline.width = 2;
       // 设置材质
       entity.polyline.material = new Spriteline1Material({
         duration: 1000,
@@ -79,7 +96,7 @@
   const setupGradientHilightMaterial = () => {
     const entities = qingDaoDataSource.value.entities.values;
     entities.forEach(entity => {
-      entity.polyline.width = 1.5;
+      entity.polyline.width = 1;
       // 设置材质
       entity.polyline.material = new GradientHilightMaterial({
         color: new Cesium.Color(0.2, 1.0, 0.4, 0.8),

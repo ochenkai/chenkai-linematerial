@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "cesium line-strip material line-material cesium-material cesium-linematerial",
   "main": "index.js",
+  "unpkg": "dist/lineMaterial.js",
+  "module": "dist/lineMaterial.esm.js",
+  "commonjs": "dist/lineMaterial.cjs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +14,16 @@
     "url": "git+https://github.com/ochenkai/chenkai-linematerial.git"
   },
   "keywords": [
-    "2860429a"
+    "cesium","line-strip","material","line-material","cesium-material","cesium-linematerial"
   ],
   "author": "chenkai",
   "license": "ISC",
+  "dependencies": {
+    "cesium": "^1.109.0"
+  },
+  "directories": {
+    "example": "example"
+  },
   "bugs": {
     "url": "https://github.com/ochenkai/chenkai-linematerial/issues"
   },
