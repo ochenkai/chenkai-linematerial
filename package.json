@@ -1,6 +1,6 @@
 {
   "name": "chenkai-linematerial",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cesium line-strip material line-material cesium-material cesium-linematerial",
   "main": "index.js",
   "unpkg": "dist/lineMaterial.js",
