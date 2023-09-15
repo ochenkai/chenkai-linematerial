@@ -47,9 +47,6 @@
     });
     
     setTimeout(() => {
-      setupSpriteline1Material()
-    }, 1000)
-    setTimeout(() => {
       // 定位到 数据位置
       viewer.value.camera.flyTo({
         destination : Cesium.Cartesian3.fromDegrees(120.34310099384454, 35.8083920730558326, 80000.0),
@@ -60,15 +57,15 @@
         }
       });
     }, 11000)
-    // setTimeout(() => {
-    //   setupFlickerMaterial()
-    // }, 1000)
-    // setTimeout(() => {
-    //   setupGradientHilightMaterial()
-    // }, 10000)
-    // setTimeout(() => {
-    //   setupSpriteline1Material()
-    // }, 30000)
+    setTimeout(() => {
+      setupFlickerMaterial()
+    }, 1000)
+    setTimeout(() => {
+      setupGradientHilightMaterial()
+    }, 10000)
+    setTimeout(() => {
+      setupSpriteline1Material()
+    }, 30000)
   }
   
   // 闪烁线条
